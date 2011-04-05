@@ -1,0 +1,22 @@
+<%= link_to "Agregar Libro", new_book_path %>
+<br/>
+<table>
+	<thead>
+		<th>Titulo</th>
+		<th>Autor</th>
+		<th>Impreso</th>
+		<th>Anillado</th>
+		<th></th>
+	</thead>
+	</tbody>
+		<% @books.each do |book| %>
+			<tr>
+				<td><%= book.name%></td>
+				<td><%= book.author%></td>
+				<td><%= book.printed? ? "Si" : "No" %></td>
+				<td><%= book.ringed? ? "Si" : "No" %></td>
+				<td><%= link_to "Editar", edit_book_path(book) %></td>
+			<tr>
+		<% end %>
+	</tbody>
+</table>
