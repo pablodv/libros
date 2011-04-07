@@ -12,5 +12,10 @@ class BooksController < InheritedResources::Base
       success.html { redirect_to collection_path }
     end
   end
- 
+  
+  protected
+        
+  def collection
+    @books ||= end_of_association_chain.paginate(:page => params[:page])
+  end 
 end
