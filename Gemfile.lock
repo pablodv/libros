@@ -79,6 +79,7 @@ GEM
     tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
+    web-app-theme (0.6.3)
 
 PLATFORMS
   ruby
@@ -89,3 +90,4 @@ DEPENDENCIES
   inherited_resources (~> 1.2.1)
   rails (= 3.0.0)
   sqlite3
+  web-app-theme (>= 0.6.2)
