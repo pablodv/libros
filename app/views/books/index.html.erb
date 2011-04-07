@@ -1,22 +1,41 @@
-<%= link_to "Agregar Libro", new_book_path %>
-<br/>
-<table>
-	<thead>
-		<th>Titulo</th>
-		<th>Autor</th>
-		<th>Impreso</th>
-		<th>Anillado</th>
-		<th></th>
-	</thead>
-	</tbody>
-		<% @books.each do |book| %>
-			<tr>
-				<td><%= book.name%></td>
-				<td><%= book.author%></td>
-				<td><%= book.printed? ? "Si" : "No" %></td>
-				<td><%= book.ringed? ? "Si" : "No" %></td>
-				<td><%= link_to "Editar", edit_book_path(book) %></td>
-			<tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", books_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_book_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Books</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th>
+            <%= t("activerecord.attributes.book.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+          <th>Autor</th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @books.each do |book| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= link_to book.name, book_path(book) %></td>
+          <td><%= book.author %></td>
+          <td><%= book.created_at %></td>
+          <td class="last">
+            <%= link_to "#{t("web-app-theme.show", :default => "Show")}", book_path(book) %> |
+            <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_book_path(book) %> |
+            <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", book_path(book), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+          </td>
+        </tr>          
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions"></div>
+        <%#= will_paginate @books  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
