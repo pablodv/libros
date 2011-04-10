@@ -7,7 +7,7 @@
     </ul>
   </div>          
   <div class="content">            
-    <h2 class="title"><%= t("web-app-theme.edit", :default => "Edit") %> Book</h2>
+    <h2 class="title"><%= t("web-app-theme.edit", :default => "Edit") %> Libro</h2>
     <div class="inner">
       <%= form_for @book, :url => book_path(@book), :html => { :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>

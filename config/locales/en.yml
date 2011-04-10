@@ -3,3 +3,16 @@
 
 en:
   hello: "Hello world"
+  web-app-theme: 
+    save: Guardar
+    cancel: Cancelar
+    list: Listado
+    edit: Editar
+    new: Nuevo
+    show: Ver
+    delete: Eliminar
+    confirm: ¿Está seguro?
+    created_at: Creado
+    all: Todos
+    title: Titulo
+

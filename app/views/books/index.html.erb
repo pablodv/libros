@@ -6,13 +6,13 @@
     </ul>
   </div>          
   <div class="content">          
-    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Books</h2>
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All") %></h2>
 
     <div class="inner">
       <table class="table">
         <tr>             
           <th>
-            <%= t("activerecord.attributes.book.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+            <%= t("web-app-theme.title", :default => "Title") %>
           </th>
           <th><%= raw select_author %></th>
           <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
