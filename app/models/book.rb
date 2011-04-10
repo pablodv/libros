@@ -9,4 +9,6 @@ class Book < ActiveRecord::Base
 
 	has_friendly_id :name, :use_slug => true
 	
+	scope :by_author, lambda { |author| where(:author => author)}	
+
 end
