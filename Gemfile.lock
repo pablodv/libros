@@ -50,6 +50,11 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_search (0.9.8)
+      actionpack (~> 3.0.0)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 1.0.1)
     mime-types (1.16)
     polyglot (0.3.1)
     rack (1.2.2)
@@ -89,6 +94,7 @@ DEPENDENCIES
   devise (= 1.1.5)
   friendly_id (= 3.1.7.pre)
   inherited_resources (~> 1.2.1)
+  meta_search
   rails (= 3.0.0)
   sqlite3
   web-app-theme (>= 0.6.2)

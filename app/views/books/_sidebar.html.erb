@@ -1,7 +1,12 @@
 <div class="block">
   <h3>Links</h3>
   <ul class="navigation">
-    <li><a href="#">Link 1</a></li>
-    <li><a href="#">Link 2</a></li>
+    <%= form_for @search, :url => books_path, :html => {:method => :get} do |f| %>
+    <li>
+      <%= f.label :name_contains, "Nombre" %>
+      <%= f.text_field :name_contains %>
+    </li>
+    <li><%= f.submit "Buscar" %></li>
+  <% end %>
   </ul>
 </div>

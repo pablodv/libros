@@ -16,6 +16,8 @@ class BooksController < InheritedResources::Base
   protected
         
   def collection
+    @search = Book.search(params[:search])
+    @books = @search.all.paginate(:page => params[:page]) if params[:search]
     if params[:author]
       @books ||= end_of_association_chain.by_author(params[:author]).paginate(:page => params[:page])
     else

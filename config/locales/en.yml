@@ -13,6 +13,9 @@ en:
         printed: "Impreso"
         ringed: "Anillado"
 
+  error:
+    blank: "No puede estar en blanco"
+    
   web-app-theme: 
     save: Guardar
     cancel: Cancelar
